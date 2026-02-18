@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; media-src *; img-src 'self' data: content:;">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: localhost:* 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; media-src *; img-src 'self' data: content: *; font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -11,17 +11,22 @@
         <!-- Materialize CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/materialize.min.css">
         <!-- Material Icons -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/index.css">
         <title>App Càmera</title>
     </head>
     <body>
+        <!-- Input file oculto para simular cámara -->
+        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+
         <!-- SideNav -->
         <ul id="slide-out" class="sidenav">
             <li><h4 class="sidenav-title">Fotos Capturades</h4></li>
             <li><div class="divider"></div></li>
-            <li id="photos-list"></li>
+            <li id="photos-list">
+                <p style="padding: 20px; color: #999; font-size: 12px;">Sense fotos encara</p>
+            </li>
         </ul>
 
         <!-- Main Content -->
@@ -40,7 +45,7 @@
                     <div class="card">
                         <div class="card-content">
                             <span class="card-title">Captura de Fotos</span>
-                            <p>Fes clic al botó per capturar una foto amb la càmera del dispositiu.</p>
+                            <p>Fes clic al botó per seleccionar una foto de la galeria o capturar amb la càmera.</p>
                         </div>
                         <div class="card-action">
                             <button id="captureBtn" class="btn waves-effect waves-light teal">
@@ -53,7 +58,7 @@
                         <div class="card">
                             <div class="card-content">
                                 <span class="card-title">Darrera Foto Capturada</span>
-                                <img id="photo-preview" style="width: 100%; height: auto; max-height: 300px; object-fit: contain;">
+                                <img id="photo-preview" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: 4px;">
                             </div>
                         </div>
                     </div>
