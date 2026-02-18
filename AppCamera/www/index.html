@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        
+        <!-- Materialize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/materialize.min.css">
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/index.css">
+        <title>App Càmera</title>
+    </head>
+    <body>
+        <!-- SideNav -->
+        <ul id="slide-out" class="sidenav">
+            <li><h4 class="sidenav-title">Fotos Capturades</h4></li>
+            <li><div class="divider"></div></li>
+            <li id="photos-list"></li>
+        </ul>
+
+        <!-- Main Content -->
+        <nav class="teal">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">App Càmera</a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger left">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row" style="margin-top: 30px;">
+                <div class="col s12 m8 offset-m2">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Captura de Fotos</span>
+                            <p>Fes clic al botó per capturar una foto amb la càmera del dispositiu.</p>
+                        </div>
+                        <div class="card-action">
+                            <button id="captureBtn" class="btn waves-effect waves-light teal">
+                                <i class="material-icons left">camera</i>Capturar Foto
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="preview-container" style="display: none;">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Darrera Foto Capturada</span>
+                                <img id="photo-preview" style="width: 100%; height: auto; max-height: 300px; object-fit: contain;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="error-message" class="card-panel red lighten-2" style="display: none; color: white;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="cordova.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/materialize.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
