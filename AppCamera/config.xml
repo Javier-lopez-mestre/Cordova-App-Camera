@@ -2,12 +2,50 @@
 <widget id="com.ejemplo.appcamera" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>AppCamera</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        App de Càmera amb Cordova i Materialize
     </description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
         Apache Cordova Team
     </author>
     <content src="index.html" />
+    
+    <!-- Permisos d'accés -->
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    
+    <!-- Permisos addicionals -->
+    <access origin="*" />
+    
+    <!-- Plugin de Cordova Camera -->
+    <plugin name="cordova-plugin-camera" spec="^6.0.0">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="Necessitem accés a la càmera per capturar fotos" />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Necessitem accés a la galeria" />
+    </plugin>
+    
+    <!-- Plugin de File (necessari per a camera) -->
+    <plugin name="cordova-plugin-file" spec="^7.0.0" />
+    
+    <!-- Plugin de Device -->
+    <plugin name="cordova-plugin-device" spec="^2.0.3" />
+    
+    <!-- Plugin de Permissions -->
+    <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
+    
+    <!-- Plataforma Android -->
+    <platform name="android">
+        <preference name="AndroidXEnabled" value="true" />
+        <preference name="GradlePluginGoogleServicesEnabled" value="false" />
+        <preference name="GradlePluginGoogleServicesVersion" value="4.3.15" />
+    </platform>
+    
+    <!-- Plataforma iOS -->
+    <platform name="ios">
+        <preference name="deployment-target" value="12.0" />
+        <preference name="ios-deployment-target" value="12.0" />
+    </platform>
 </widget>

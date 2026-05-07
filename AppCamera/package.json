@@ -14,7 +14,10 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "cordova-android": "^14.0.1",
-    "cordova-plugin-camera": "^8.0.0"
+    "cordova-plugin-android-permissions": "^1.1.5",
+    "cordova-plugin-camera": "^8.0.0",
+    "cordova-plugin-device": "^2.1.0",
+    "cordova-plugin-file": "^7.0.0"
   },
   "cordova": {
     "platforms": [
@@ -23,6 +26,15 @@
     "plugins": {
       "cordova-plugin-camera": {
         "ANDROIDX_CORE_VERSION": "1.6.+"
+      },
+      "cordova-plugin-file": {
+        "ANDROIDX_WEBKIT_VERSION": "1.4.0"
+      },
+      "cordova-plugin-device": {
+        "ANDROIDX_WEBKIT_VERSION": "1.4.0"
+      },
+      "cordova-plugin-android-permissions": {
+        "ANDROIDX_WEBKIT_VERSION": "1.4.0"
       }
     }
   }
